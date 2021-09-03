@@ -14,10 +14,9 @@ class MealDetailScreen extends StatelessWidget {
   Widget buildContainer(Widget child) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(15)
-      ),
+          color: Colors.white,
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(15)),
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(10),
       height: 200,
@@ -66,7 +65,7 @@ class MealDetailScreen extends StatelessWidget {
             buildContainer(ListView.builder(
               itemBuilder: (ctx, index) {
                 final currentStep = selectedMeal.steps[index];
-      
+
                 return Column(
                   children: [
                     ListTile(
@@ -83,6 +82,12 @@ class MealDetailScreen extends StatelessWidget {
             ))
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop(mealId);
+        },
+        child: Icon(Icons.delete),
       ),
     );
   }
